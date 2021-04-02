@@ -1,0 +1,31 @@
+{% extends "travel/blogbase.html" %}
+{% block title %}
+	{{category}}
+{% endblock %}
+
+{% block body %}
+
+<!--==============================Content=================================-->
+		<div class="content"><div class="ic"></div>
+			<div class="container_12">
+				<div class="grid_7">
+					<h3>{{category}}</h3>
+					{% for post in posts %}
+					<div class="blog">
+						<time datetime="2014-10-01">{{ post.holiday.date.day}}<span>{{post.holiday.date|date:'b'}}</span></time>
+						<div class="extra_wrapper">
+							<div class="text1 col1"><a href="#">{{post.holiday.title}}</a></div>Posted by
+							<a href="#">{{post.holiday.user}}</a>
+						</div>
+						<div class="clear"></div>
+						<img src="{{ post.holiday.image}}" alt="" class="img_inner">
+						<p>{{ post.holiday.text}} </p>
+						<p class="text1 col1">Booking availeble from: {{post.holiday.from_date}}</p>
+						<p class="text1 col1">End of the offer: {{ post.holiday.to_date }}</p>
+						<p class="text1 cil1">Price starts from: £{{ post.holiday.price}} pp</p>
+						<br>
+						<a href="{% url 'booking' post.holiday.title %}" class="link1">Book</a>
+					</div>
+					{% endfor %}
+				</div>
+{% endblock %}				

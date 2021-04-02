@@ -1,0 +1,48 @@
+{% extends "travel/blogbase.html" %}
+
+{% block title %}
+	Booking
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+<!--==============================Content=================================-->
+<div class="content"><div class="ic"></div>
+	<h2>{{msg}}</h2>
+	<div class="container_12">
+		<div class="banners">
+			<div class="grid_4">
+				<div class="banner">
+					<h3 class="text-center">{{ controller  }}</h3>
+					<form action="{% url 'booking' name %}" method="post">
+						{% csrf_token %}
+						<label class="tmDatepicker" >Holiday : <br>
+							<input id="Holiday packedge" type="text" name="packedge" value="{{name}}">
+						</label>
+						<br><br>
+						<div class="clear"></div>
+						<label class="tmDatepicker" >From : <br>
+							<input id="Holiday " type="date" name="from" value="">
+						</label>
+						<br><br>
+						<div class="clear"></div>
+						<label class="tmDatepicker">Till : <br>      
+							<input id="Holiday " type="date" name="till" value="">
+						</label>
+						<br><br>
+						<div class="clear"></div>
+						<label class="tmDatepicker" >Travelers : <br> 
+							<input id="Holiday " type="number" name="travelers" value="">
+						</label>
+						<br><br>
+						<div class="clear"></div>
+						<input type="submit" value="OK">
+					</form>				
+					</div>
+				</div>
+			</div>		
+	</div>
+</div>
+<!--==============================footer=================================-->
+{% endblock %}

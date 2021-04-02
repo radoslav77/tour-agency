@@ -1,0 +1,54 @@
+{% extends "travel/base.html" %}
+{% block title %}
+	Profile
+{% endblock %}
+
+
+{% block body %}
+<!--==============================Content=================================-->		
+        <div class="content"><div class="ic"></div>
+			<div class="container_12">
+				<div class="banners">
+					<div class="grid_4">
+						<div class="banner">
+							<h3 class="text-center">{{ user.first_name }} <br> {{ user.last_name}}</h3>
+							{% if history in history %}
+							<ul>
+								<li>{{history.title}}</li>
+							</ul>
+							{% endif %}
+							
+						</div>
+					</div>
+                    <br><br><br><br>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img2.jpg" alt="">
+							<div class="label">
+								<div class="title">GOA</div>
+								<div class="price">from<span>$ 1.500</span></div>
+								<a href="#">LEARN MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img3.jpg" alt="">
+							<div class="label">
+								<div class="title">FRANCE</div>
+								<div class="price">from<span>$ 1.600</span></div>
+								<a href="#">LEARN MORE</a>
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="clear"></div>
+
+
+				</div>
+			</div>
+		</div>
+<!--==============================footer=================================-->
+{% endblock %}

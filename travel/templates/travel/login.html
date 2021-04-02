@@ -1,0 +1,64 @@
+{% extends "travel/base.html" %}
+{% block title %}
+	Login
+{% endblock %}
+
+
+{% block body %}
+<!--==============================Content=================================-->		
+        <div class="content"><div class="ic"></div>
+			<div class="container_12">
+				<div class="banners">
+					<div class="grid_4">
+						<div class="banner">
+							<h3 class=" text-center">Login to Your Account!</h3>
+							<form action="" method="POST">
+								{% csrf_token %}
+								<label>Username</label>
+								<div class="fl1">
+									<div class="tmInput">
+										<input name="username" placeHolder="Username:" type="text" data-constraints='@NotEmpty @Required @AlphaSpecial'>
+									</div>
+								</div>
+								<label>Password</label>
+								<div class="fl1">
+									<div class="tmInput">
+										<input name="password" placeHolder="Password:" type="password" data-constraints='@NotEmpty @Required @AlphaSpecial'>
+									</div>
+								</div>
+								<br>
+								{% if error %}
+								<i style="color:red;">{{ error }}</i>
+								{% endif %}
+								<input  type="submit" value="Login" class="btn" data-type="submit">
+							</form>
+							</div>
+						</div>
+					</div>
+                    <br><br><br><br>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img2.jpg" alt="">
+							<div class="label">
+								<div class="title">GOA</div>
+								<div class="price">from<span>$ 1.500</span></div>
+								<a href="#">LEARN MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img3.jpg" alt="">
+							<div class="label">
+								<div class="title">FRANCE</div>
+								<div class="price">from<span>$ 1.600</span></div>
+								<a href="#">LEARN MORE</a>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+<!--==============================footer=================================-->
+{% endblock %}

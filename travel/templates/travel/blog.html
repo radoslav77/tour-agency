@@ -1,0 +1,48 @@
+{% extends 'travel/blogbase.html' %}
+{% block title %}
+	Blog
+{% endblock %}
+
+{% block body%}
+<!--==============================Content=================================-->
+	<div class="content"><div class="ic"></div>
+			<div class="container_12">
+				<div class="grid_7">
+					<h3>All Posts</h3>					
+					{% for post in posts %}	
+					<div class="blog">
+						<time datetime="2014-10-01">{{post.date.day}}<span>{{post.date|date:'b'}}</span></time>
+						<div class="extra_wrapper">
+							<div class="text1 col1"><a href="{% url 'blogdetails' post.id %}">{{ post.title}}</a></div>Posted by
+							<a href="#">{{ post.user}}</a>
+						</div>
+						<div class="clear"></div>
+						<img src="{{ post.image }}" alt="" class="img_inner">
+						<p>{{ post.text }}</p>Maecenas vehicula egestas venenatis. Duis massa elit, auctor non pellentesque vel aliquet sit amet erat. Nullam eget dignissim nisi, aliquam feugiat nibh.
+						<br>
+						<a href="{% url 'blogdetails' post.id %}" class="link1">LEARN MORE</a>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="grid_3 prefix_1">
+					<h3 class="head1">CATEGORIES</h3>
+					<ul class="list">
+						{% for c in country %}
+							<li><a href="{% url 'category' c %}">{{c}} </a></li>						
+						{% endfor %}
+					</ul>
+					<h3 class="head1">ARchives</h3>
+					<ul class="list">
+						{% for a in archive %}
+						<li><a href="{% url 'blogdetails' a.id %}">{{a.date }}</a></li>
+						<li><a href="#">October 2013</a></li>
+						<li><a href="#">September 2013</a></li>
+						<li><a href="#">August 2013</a></li>
+						<li><a href="#">July 2013</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>	
+{% endblock %}				

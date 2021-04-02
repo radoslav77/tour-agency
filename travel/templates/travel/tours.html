@@ -1,0 +1,130 @@
+{% extends "travel/base.html" %}
+{% block title %}
+	Hot tours
+{% endblock %}
+
+
+{% block body %}
+<!--==============================Content=================================-->
+		<div class="content"><div class="ic"></div>
+			<div class="container_12">
+				<div class="banners">
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img1.jpg" alt="">
+							<div class="label">
+								{% for c in coun %}
+								{% if c.country == "New Zealand" %}
+								<div class="title">NEW ZEALAND</div>
+								<div class="price">from<span>£ {{c.holiday.price}}</span></div>
+										<a href="{% url 'country' c.id %}">LEARN MORE</a>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img2.jpg" alt="">
+							<div class="label">
+								{% for c in coun %}
+								{% if c.country == "India" %}
+								<div class="title">GOA</div>
+								<div class="price">from<span>£ {{c.holiday.price}}</span></div>
+										<a href="{% url 'country' c.id %}">LEARN MORE</a>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img3.jpg" alt="">
+							<div class="label">
+								{% for c in coun %}
+								{% if c.country == "France" %}
+								<div class="title">FRANCE</div>
+								<div class="price">from<span>£ {{c.holiday.price}}</span></div>
+										<a href="{% url 'country' c.id %}">LEARN MORE</a>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img4.jpg" alt="">
+							<div class="label">
+								{% for c in coun %}
+								{% if c.country == "Canada" %}
+								<div class="title">CANADA</div>
+								<div class="price">from<span>£ {{c.holiday.price}}</span></div>
+										<a href="{% url 'country' c.id %}">LEARN MORE</a>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img5.jpg" alt="">
+							<div class="label">
+								{% for c in coun %}
+								{% if c.country == "Turkey" %}
+								<div class="title">TURKEY</div>
+								<div class="price">from<span>£ {{c.holiday.price}}</span></div>
+									<a href="{% url 'country' c.id %}">LEARN MORE</a>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img6.jpg" alt="">
+							<div class="label">
+								{% for c in coun %}
+								{% if c.country == "Egypt" %}
+								<div class="title">EGYPT</div>
+								<div class="price">from<span>£ {{c.holiday.price}}</span></div>
+										<a href="{% url 'country' c.id %}">LEARN MORE</a>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="grid_4">
+						<div class="banner">							
+							<img src="static/images/page2_img7.jpg" alt="">
+							<div class="label">
+								{% for c in coun %}
+								{% if c.country == "Japan" %}
+								<div class="title">JAPAN</div>
+								<div class="price">from<span>£ {{c.holiday.price}}</span></div>
+										<a href="{% url 'country' c.id %}">LEARN MORE</a>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="grid_4">
+						<div class="banner">
+							<img src="static/images/page2_img8.jpg" alt="">
+							<div class="label">
+								{% for c in coun %}
+								{% if c.country == "Brazil" %}
+								<div class="title">BRAZIL</div>
+								<div class="price">from<span>£ {{c.holiday.price}}</span></div>
+									<a href="{% url 'country' c.id %}">LEARN MORE</a>
+								{% endif %}
+							{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--==============================footer=================================-->
+{% endblock %}

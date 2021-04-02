@@ -1,0 +1,32 @@
+{% extends "travel/blogbase.html" %}
+{% block title %}
+	{{detail.title}}
+{% endblock %}
+
+{% block body %}
+
+<!--==============================Content=================================-->
+		<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - February 10, 2014!</div>
+			<div class="container_12">
+				<div class="grid_7">
+					<h3>Recent Posts</h3>
+					<div class="blog">
+						<time datetime="2014-10-01">{{ detail.date.day}}<span>Mar</span></time>
+						<div class="extra_wrapper">
+							<div class="text1 col1"><a href="#">{{detail.title}}</a></div>Posted by
+							<a href="#">{{detail.user}}</a>
+						</div>
+						<div class="clear"></div>
+						<img src="{{ detail.image}}" alt="" class="img_inner">
+						<p>{{ detail.text}} </p>
+						<p class="text1 col1">Booking availeble from: {{detail.from_date}}</p>
+						<p class="text1 col1">End of the offer: {{ detail.to_date }}</p>
+						<p class="text1 cil1">Price starts from: £{{ detail.price}} pp</p>
+						<br>
+						<a href="{% url 'booking' detail.title %}" class="link1">Book</a>
+					</div>
+				</div>
+			</div>
+		</div>	
+				
+{% endblock %}				
